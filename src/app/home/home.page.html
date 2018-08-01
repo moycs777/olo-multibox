@@ -1,12 +1,36 @@
 <ion-header>
   <ion-toolbar>
     <ion-title>
-      Ionic Blank
+      Mutil-Box
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-  The world is your oyster.
-  <p>If you get lost, the <a target="_blank" href="https://ionicframework.com/docs">docs</a> will be your guide.</p>
+  <ion-card>
+    <ion-card-header>
+      <ion-card-subtitle>Busqueda de paquetes</ion-card-subtitle>
+      <ion-card-title>*-*</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      Introduce tu numero de guia/trackin y haz click en buscar ;)
+    </ion-card-content>
+  </ion-card>
+  
+  <ion-item>
+    <ion-input required type="text" id="tracking_id" placeholder="Tracking id/number" 
+       [(ngModel)]="tracking_id" >
+    </ion-input>
+  </ion-item>
+
+  <ion-button size="small" (click) ="showVal()" >Buscar</ion-button>
+
+  <ion-list inset>
+    <button ion-item *ngFor="let item of myProducts" (click)="searchProduct(item)">
+      {{ item.name }}
+    </button>
+  </ion-list>
+
+
 </ion-content>
