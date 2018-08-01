@@ -8,10 +8,10 @@
 
 <ion-content padding>
   <ion-card>
-    <ion-card-header>
+    <!-- <ion-card-header>
       <ion-card-subtitle>Busqueda de paquetes</ion-card-subtitle>
       <ion-card-title>*-*</ion-card-title>
-    </ion-card-header>
+    </ion-card-header> -->
 
     <ion-card-content>
       Introduce tu numero de guia/trackin y haz click en buscar ;)
@@ -27,9 +27,9 @@
   <ion-button size="small" (click) ="showVal()" >Buscar</ion-button>
 
   <ion-list *ngFor="let item of myProducts">
-    <ion-item (click)="searchProduct(item)">
+    <ion-item (click)="detailProd(item)">
        {{ item.title }} Left Icon Button
-      <button ion-button outline item-end icon-start (click)="searchProduct(item)" >
+      <button ion-button outline item-end icon-start (click)="detailProd(item)" >
         <ion-icon ios="ios-arrow-round-forward" md="md-arrow-round-forward"></ion-icon>
       </button>
     </ion-item>

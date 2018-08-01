@@ -27,10 +27,10 @@ export class HomePage {
   myProducts:any;
 
   showVal(val){
-    this.myTracks()
+    this.search()
   }
 
-  myTracks(){
+  search(){
     this.trackingsService.getTrackings()
       .subscribe(data => {
         this.myProducts = data;
@@ -40,7 +40,7 @@ export class HomePage {
       )
   }
 
-  searchProduct(item){
+  detailProd(item){
     console.log("funcion de ver detalle del producto");
     this.router.navigateByUrl('detail/' + item.id);
     
