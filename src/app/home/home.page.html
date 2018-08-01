@@ -26,11 +26,13 @@
 
   <ion-button size="small" (click) ="showVal()" >Buscar</ion-button>
 
-  <ion-list inset>
-    <button ion-item *ngFor="let item of myProducts" (click)="searchProduct(item)">
-      {{ item.name }}
-    </button>
+  <ion-list *ngFor="let item of myProducts">
+    <ion-item (click)="searchProduct(item)">
+       {{ item.title }} Left Icon Button
+      <button ion-button outline item-end icon-start (click)="searchProduct(item)" >
+        <ion-icon ios="ios-arrow-round-forward" md="md-arrow-round-forward"></ion-icon>
+      </button>
+    </ion-item>
   </ion-list>
-
 
 </ion-content>

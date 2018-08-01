@@ -2,6 +2,9 @@ import { Component } from '@angular/core';
 //import { SplashScreen } from '@ionic-native/splash-screen';
 import { SplashScreen } from '@ionic-native/splash-screen/ngx';
 import { TrackingsService } from '../services/trackings.service';
+import { NavController } from '@ionic/angular';
+import { RouterModule, Routes, Router } from '@angular/router';
+import { ProductDetailComponent } from '../product-detail/product-detail.component';
 
 @Component({
   selector: 'app-home',
@@ -12,7 +15,10 @@ import { TrackingsService } from '../services/trackings.service';
 export class HomePage {
   constructor(
     private splashScreen: SplashScreen, 
-    public trackingsService:TrackingsService) 
+    public trackingsService:TrackingsService,
+    public navCtrl:NavController,
+    public router: Router 
+    ) 
     {
       this.splashScreen.show();
     }
@@ -21,9 +27,6 @@ export class HomePage {
   myProducts:any;
 
   showVal(val){
-    /* console.log(this.tracking_id);
-    this.trackingsService.search(this.tracking_id);
-    console.log(this.trackingsService.getTrackings()); */
     this.myTracks()
   }
 
@@ -39,6 +42,8 @@ export class HomePage {
 
   searchProduct(item){
     console.log("funcion de ver detalle del producto");
+    this.router.navigateByUrl('detail/' + item.id);
+    
   }
 
 }

@@ -7,9 +7,6 @@ import { HttpClient } from '@angular/common/http';
 export class TrackingsService {
 
   private apiUrl = 'https://jsonplaceholder.typicode.com/posts';
-  //private apiUrl = 'http://localhost:8000/api/all-services/2';
-  /* private apiUrl = 'https://jsonplaceholder.typicode.com/todos/1'; */
-  //private apiUrl = 'https://restcountries.eu/rest/v2/all';
 
   constructor(public http: HttpClient) { }
 
